@@ -1,0 +1,14 @@
+// LOCALHOST
+###
+GET http://localhost:8080/contacts
+
+###
+GET http://localhost:8080/contacts/67caf7fd8557f7c3ac6439e6
+
+// PRODUCTION Deploy
+###
+GET https://cse-341-mabb.onrender.com/contacts
+
+###
+GET https://cse-341-mabb.onrender.com/contacts/67caf7fd8557f7c3ac6439e6
+
