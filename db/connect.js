@@ -16,7 +16,6 @@ const initDb = (callback) => {
 
   const uri = process.env.MONGODB_URI
 
-  // Add debugging to check if the URI is loaded
   if (!uri) {
     console.error("MONGODB_URI is undefined. Check your .env file.")
     return callback(new Error("MONGODB_URI is undefined"), null)

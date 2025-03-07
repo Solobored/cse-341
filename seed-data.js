@@ -6,6 +6,13 @@ const client = new MongoClient(uri)
 
 const contacts = [
   {
+    firstName: "Sarah",
+    lastName: "Williams",
+    email: "sarah.williams@email.com",
+    favoriteColor: "purple",
+    birthday: "1988-12-10",
+  },
+  {
     firstName: "David",
     lastName: "Brown",
     email: "david.brown@email.com",
