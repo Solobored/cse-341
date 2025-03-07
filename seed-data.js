@@ -17,7 +17,7 @@ const contacts = [
     lastName: "Brown",
     email: "david.brown@email.com",
     favoriteColor: "orange",
-    birthday: "1995-05-20",
+    birthday: "2000-05-20",
   },
   {
     firstName: "Emily",
