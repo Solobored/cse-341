@@ -19,7 +19,7 @@ async function seedDB() {
         lastName: "Brown",
         email: "david.brown@email.com",
         favoriteColor: "orange",
-        birthday: "2000-05-20",
+        birthday: "1995-05-20",
       },
       {
         firstName: "Emily",
