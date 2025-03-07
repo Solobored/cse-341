@@ -43,11 +43,9 @@ async function seedDatabase() {
     const database = client.db()
     const collection = database.collection("contacts")
 
-    // Insert new contacts
     const result = await collection.insertMany(contacts)
     console.log(`${result.insertedCount} contacts inserted`)
 
-    // Print the IDs of the inserted contacts
     console.log("Contact IDs:")
     Object.values(result.insertedIds).forEach((id) => {
       console.log(id.toString())
