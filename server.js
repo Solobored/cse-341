@@ -2,20 +2,25 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const mongodb = require("./db/connect")
 const swaggerUi = require("swagger-ui-express")
-const swaggerDocument = require("./swagger.json")
 const port = process.env.PORT || 8080
 const app = express()
 const cors = require('cors');
 
+const swaggerDocument = process.env.NODE_ENV === 'production' 
+  ? require("./swagger.prod.json")
+  : require("./swagger.json");
+
+app.use(cors({
+  origin: ['http://localhost:8080', 'https://cse-341-mabb.onrender.com'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
+
 app
   .use(bodyParser.json())
-  .use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*")
-    next()
-  })
   .use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument))
-  .use("/", require("./routes"))
-  .use(cors());
+  .use("/", require("./routes"));
 
 mongodb.initDb((err) => {
   if (err) {
@@ -25,4 +30,3 @@ mongodb.initDb((err) => {
     console.log(`Connected to DB and listening on ${port}`)
   }
 })
-

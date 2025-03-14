@@ -5,9 +5,9 @@
     "description": "API for managing contacts",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "cse-341-mabb.onrender.com",
   "basePath": "/",
-  "schemes": ["http", "https"],
+  "schemes": ["https"],
   "paths": {
     "/contacts": {
       "get": {
