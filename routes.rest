@@ -1,14 +1,67 @@
 // LOCALHOST
-###
+### 
 GET http://localhost:8080/contacts
 
 ###
 GET http://localhost:8080/contacts/67caf7fd8557f7c3ac6439e6
 
-// PRODUCTION Deploy
+###
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Javiera",
+  "lastName": "Neicuelo",
+  "email": "javeira.neiculeo@example.com",
+  "favoriteColor": "blue",
+  "birthday": "2006-02-01"
+}
+
+###
+PUT http://localhost:8080/contacts/67d46b7d6ec497bf79a05f5e
+Content-Type: application/json
+
+{
+  "firstName": "Josue",
+  "lastName": "Neicuelo",
+  "email": "josue.neiculeo@example.com",
+  "favoriteColor": "blue",
+  "birthday": "2002-10-16"
+}
+
+###
+DELETE http://localhost:8080/contacts/67d38706082ccab2ae25bec6
+
 ###
 GET https://cse-341-mabb.onrender.com/contacts
 
 ###
 GET https://cse-341-mabb.onrender.com/contacts/67caf7fd8557f7c3ac6439e6
+
+###
+POST https://cse-341-mabb.onrender.com/contacts
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "favoriteColor": "blue",
+  "birthday": "1990-01-01"
+}
+
+###
+PUT https://cse-341-mabb.onrender.com/contacts/67caf7fd8557f7c3ac6439e6
+Content-Type: application/json
+
+{
+  "firstName": "David",
+  "lastName": "Brown",
+  "email": "david.updated@example.com",
+  "favoriteColor": "orange",
+  "birthday": "1995-05-20"
+}
+
+###
+DELETE https://cse-341-mabb.onrender.com/contacts/[67d38706082ccab2ae25bec6]
 
