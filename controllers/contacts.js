@@ -38,7 +38,7 @@ const createContact = async (req, res) => {
       birthday: req.body.birthday,
     }
 
-    // Validate required fields
+   
     const requiredFields = ["firstName", "lastName", "email", "favoriteColor", "birthday"]
     for (const field of requiredFields) {
       if (!contact[field]) {
@@ -63,7 +63,7 @@ const updateContact = async (req, res) => {
   try {
     const userId = new ObjectId(req.params.id)
 
-    // Build contact object with provided fields
+    
     const contact = {}
     if (req.body.firstName) contact.firstName = req.body.firstName
     if (req.body.lastName) contact.lastName = req.body.lastName
